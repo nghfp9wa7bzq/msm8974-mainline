@@ -571,7 +571,7 @@
 &pm8941_wled {
 	status = "okay";
 
-	default-brightness = <2500>;
+	default-brightness = <1023>;
 	qcom,cs-out;
 	qcom,current-limit = <20>;
 	qcom,current-boost-limit = <805>;
