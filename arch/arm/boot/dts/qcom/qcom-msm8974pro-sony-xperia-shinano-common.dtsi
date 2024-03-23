@@ -568,6 +568,10 @@
 	status = "okay";
 };
 
+&pm8941_wled {
+	status = "okay";
+};
+
 &mdss_dsi0 {
 	status = "okay";
 
@@ -580,7 +584,7 @@
 		compatible = "qcom,mdss_dsi_toshiba_720p_video";
 		reg = <0>;
 
-		backlight = <&backlight>;
+		backlight = <&pm8941_wled>;
 
 		/* not sure about these */
 		iovdd-supply = <&pm8941_l12>;
