@@ -17,4 +17,8 @@ config DRM_PANEL_SONY_LEO_NOVATEK_LGD
 	tristate "Sony LEO NOVATEK LGD"
 	default DRM_PANEL_MSM8974_GENERATED
 
+config CONFIG_DRM_PANEL_SONY_ARIES_TOSHIBA_720P_VIDEO
+	tristate "Sony Aries toshiba 720p video"
+	default DRM_PANEL_MSM8974_GENERATED
+
 endmenu
