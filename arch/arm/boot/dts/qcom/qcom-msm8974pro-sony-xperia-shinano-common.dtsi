@@ -589,7 +589,7 @@
 	vdda-supply = <&pm8941_l2>;
 
 	panel@0 {
-		compatible = "qcom,mdss_dsi_toshiba_720p_video";
+		compatible = "somc,novatek_default_panel_0";
 		reg = <0>;
 
 		backlight = <&pm8941_wled>;
