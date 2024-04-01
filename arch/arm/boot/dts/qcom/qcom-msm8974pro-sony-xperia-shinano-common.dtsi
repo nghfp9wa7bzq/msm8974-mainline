@@ -185,14 +185,6 @@
 		input-disable;
 		output-low;
 	};
-
-	panel_en_pin: panel-en-state {
-		pins = "gpio14";
-		function = "normal";
-		bias-pull-up;
-		power-source = <PM8941_GPIO_S3>;
-		qcom,drive-strength = <PMIC_GPIO_STRENGTH_LOW>;
-	};
 };
 
 &pm8941_lpg {
@@ -595,12 +587,15 @@
 		backlight = <&pm8941_wled>;
 
 		/* not sure about these */
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&panel_te_pin>, <&panel_rst_pin>;
 		iovdd-supply = <&pm8941_l12>;
 		vddr-supply = <&vreg_panel>;
 
 		reset-gpios = <&pm8941_gpios 19 0>;
-		enable-gpios = <&tlmm 58 0>;
-		te-gpios = <&tlmm 12 0>;
+		/*enable-gpios = <&tlmm 58 0>;
+		te-gpios = <&tlmm 12 0>;*/
 
 		port {
 			panel_in: endpoint {
@@ -620,3 +615,30 @@
 	status = "okay";
 };
 
+
+&pm8941_gpios {
+	panel_en_pin: panel-en-state {
+		pins = "gpio14";
+		function = "normal";
+		bias-pull-up;
+		power-source = <PM8941_GPIO_S3>;
+		qcom,drive-strength = <PMIC_GPIO_STRENGTH_LOW>;
+	};
+
+	panel_rst_pin: panel-rst-state {
+		pins = "gpio19";
+		function = "normal";
+		bias-disable;
+		power-source = <PM8941_GPIO_S3>;
+		qcom,drive-strength = <PMIC_GPIO_STRENGTH_LOW>;
+	};
+};
+
+&tlmm {
+	panel_te_pin: panel-state {
+		pins = "gpio12";
+		function = "mdp_vsync";
+		drive-strength = <2>;
+		bias-disable;
+	};
+};
