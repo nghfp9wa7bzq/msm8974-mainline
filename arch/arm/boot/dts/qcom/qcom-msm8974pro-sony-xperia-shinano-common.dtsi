@@ -590,14 +590,15 @@
 
 		pinctrl-names = "default";
 		pinctrl-0 = <&panel_te_pin>, <&panel_rst_pin>;
-/*
+
 		iovdd-supply = <&pm8941_l12>;
 		vddr-supply = <&vreg_panel>;
-*/
+/*
 		power-supply = <&vreg_vsp>;
+*/
 		reset-gpios = <&pm8941_gpios 19 0>;
-		/*enable-gpios = <&tlmm 58 0>;
-		te-gpios = <&tlmm 12 0>;*/
+		enable-gpios = <&tlmm 58 0>;
+		te-gpios = <&tlmm 12 0>;
 
 		port {
 			panel_in: endpoint {

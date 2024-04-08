@@ -57,7 +57,7 @@ static int novatek_default_0_on(struct novatek_default_0 *ctx)
 		dev_err(dev, "Failed to set display on: %d\n", ret);
 		return ret;
 	}
-
+	dev_info(dev, "novatek_default_0_on end");
 	return 0;
 }
 
@@ -80,6 +80,7 @@ static int novatek_default_0_off(struct novatek_default_0 *ctx)
 	}
 	msleep(100);
 
+	dev_info(dev, "novatek_default_0_off end");
 	return 0;
 }
 
@@ -99,6 +100,7 @@ static int novatek_default_0_prepare(struct drm_panel *panel)
 	}
 
 	ctx->prepared = true;
+	dev_info(dev, "novatek_default_0_prepare end");
 	return 0;
 }
 
@@ -117,6 +119,7 @@ static int novatek_default_0_unprepare(struct drm_panel *panel)
 
 
 	ctx->prepared = false;
+	dev_info(dev, "novatek_default_0_unprepare end");
 	return 0;
 }
 
@@ -194,6 +197,7 @@ static int novatek_default_0_probe(struct mipi_dsi_device *dsi)
 		return ret;
 	}
 
+	dev_info(dev, "novatek_default_0_probe end");
 	return 0;
 }
 
