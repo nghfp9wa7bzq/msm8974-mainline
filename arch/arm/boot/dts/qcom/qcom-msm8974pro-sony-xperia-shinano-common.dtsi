@@ -581,7 +581,7 @@
 	vdda-supply = <&pm8941_l2>;
 
 	panel@0 {
-		compatible = "somc,novatek_default_panel_0";
+		compatible = "somc,novatek_sharp_720p_cmd_panel";
 		reg = <0>;
 
 		backlight = <&pm8941_wled>;
