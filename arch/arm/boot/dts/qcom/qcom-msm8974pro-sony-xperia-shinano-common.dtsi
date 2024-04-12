@@ -581,7 +581,7 @@
 	vdda-supply = <&pm8941_l2>;
 
 	panel@0 {
-		compatible = "qcom,mdss_dsi_toshiba_720p_video";
+		compatible = "somc,novatek_sharp_720p_cmd_panel";
 		reg = <0>;
 
 		backlight = <&pm8941_wled>;
@@ -597,10 +597,11 @@
 /*
 		power-supply = <&vreg_vsp>;
 */
+/*
 		reset-gpios = <&pm8941_gpios 19 0>;
 		enable-gpios = <&tlmm 58 0>;
 		te-gpios = <&tlmm 12 0>;
-
+*/
 		port {
 			panel_in: endpoint {
 				remote-endpoint = <&mdss_dsi0_out>;
