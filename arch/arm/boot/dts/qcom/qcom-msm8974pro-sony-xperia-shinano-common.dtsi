@@ -106,6 +106,13 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&panel_en_pin>;
 	};
+
+	reserved-memory {
+		mdss_fb0: memory@3200000 {
+			reg = <0x03200000 0x01E00000>;
+			no-map;
+		};
+	};
 };
 
 &blsp1_uart2 {
@@ -619,13 +626,6 @@
 &mdss_dsi0_phy {
 	vddio-supply = <&pm8941_l12>;
 	status = "okay";
-};
-
-&reserved-memory {
-	mdss_fb0: memory@3200000 {
-		reg = <0x03200000 0x01E00000>;
-		no-map;
-	};
 };
 
 &pm8941_gpios {
