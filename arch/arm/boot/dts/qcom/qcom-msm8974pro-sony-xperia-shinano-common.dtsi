@@ -558,6 +558,7 @@
 
 &mdss {
 	status = "okay";
+	memory-region = <&mdss_fb0>;
 };
 
 &pm8941_wled {
@@ -620,6 +621,12 @@
 	status = "okay";
 };
 
+&reserved-memory {
+	mdss_fb0: memory@3200000 {
+		reg = <0x03200000 0x01E00000>;
+		no-map;
+	};
+};
 
 &pm8941_gpios {
 	panel_en_pin: panel-en-state {
